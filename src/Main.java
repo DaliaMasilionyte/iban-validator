@@ -6,15 +6,19 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        InputReader inputReader = new InputReader();
 
-        inputReader.selectMode();
-        ArrayList<String> listOfIbans = inputReader.readInput();
-
-        for(String iban : listOfIbans) {
-            System.out.println(iban);
-        }
-
+        IbanValidator ibanValidator = new IbanValidator();
+        ibanValidator.IbanValidationService();
+//        InputReader inputReader = new InputReader();
+//
+//        inputReader.selectMode();
+//        ArrayList<String> listOfIbans = inputReader.readInput();
+//
+//        for(String iban : listOfIbans) {
+//            System.out.println(iban);
+//        }
+//
+//
 
     }
 }
