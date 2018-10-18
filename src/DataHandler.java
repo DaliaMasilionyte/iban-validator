@@ -62,9 +62,6 @@ public class DataHandler {
         return allIbans;
     }
 
-    public void writeToConsole(String line){
-        System.out.println(line);
-    }
 
     public void createOutputFile() throws IOException {
         if (inputFile.contains(".")) {
@@ -76,10 +73,21 @@ public class DataHandler {
 
     }
 
-    public void writeToFile(String line) throws IOException {
-        writer.write(line + "\n");
-
+    public void print(String line){
+        switch(mode) {
+            case 0:
+                System.out.println(line);
+                break;
+            case 1:
+                try {
+                    writer.write(line + "\n");
+                    break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
     }
+
     public void closeFile() throws IOException {
         writer.close();
     }
