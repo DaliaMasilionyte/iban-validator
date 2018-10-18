@@ -1,18 +1,18 @@
 public class Iban {
 
     private final String iban;
-    private boolean isValid;
+    private boolean valid;
 
 
     public Iban(String iban) {
         this.iban = iban;
     }
 
-    public void setValid(boolean isValid) {
-        this.isValid = isValid;
+    public void setValid(boolean valid) {
+        this.valid = valid;
     }
 
-    public boolean getValid(){
-        return isValid;
+    public boolean isValid(){
+        return valid;
     }
 }
