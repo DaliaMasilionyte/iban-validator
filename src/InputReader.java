@@ -42,13 +42,11 @@ public class InputReader {
                             new BufferedReader(new FileReader(fileName));
                     String line;
                     while((line = fileReader.readLine()) != null){
-                        line = fileReader.readLine();
                         allIbans.add(line);
                     }
                     break;
 
-                } catch(java.io.IOException error)
-                    {
+                } catch(java.io.IOException error) {
                         System.err.println("Failas nerastas.");
                 }
 
