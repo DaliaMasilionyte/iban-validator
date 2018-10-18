@@ -33,13 +33,13 @@ public class IbanValidator {
         return !nonAlphanumeric;
     }
 
-//        public BigInteger convertIbanToNumeric(Iban Iban){
+
         public void convertIbanToNumeric(Iban Iban){
             String iban = Iban.getIban();
             String reorderedIban = iban.substring(IBAN_PREFIX) + iban.substring(0, IBAN_PREFIX);
             String ibanNumber = "";
 
-//          TODO: sukuriama char masyvo kopija, gal geriau paprastas for loop
+//         sukuriama char masyvo kopija, gal geriau paprastas for loop
 //            Gal galima applyint ne visiem simboliam, o tik raidem
             for(char symbol: reorderedIban.toCharArray()){
 //                All letters are converted to their numeric representation
@@ -47,7 +47,7 @@ public class IbanValidator {
             }
             BigInteger numericIban = new BigInteger(ibanNumber);
             Iban.setNumericIban(numericIban);
-//        return numericIban;
+
     }
 
     public int modulus(BigInteger numericIban){
@@ -62,39 +62,50 @@ public class IbanValidator {
         return valid;
     }
 
+    public String fileResultFormation(Iban iban){
+        String result = iban.getIban() + ";";
+        result += String.valueOf(iban.isValid());
+        return result;
+    }
+
 
     public void IbanValidationService() throws IOException {
 
         dataHandler.selectMode();
-        if(dataHandler.getMode() == 0){
-            dataHandler.createOutputFile();
-        }
+        do {
+            ArrayList<String> listOfIbans = dataHandler.readInput();
 
-        ArrayList<String> listOfIbans = dataHandler.readInput();
-
-        ArrayList<Iban> ibans = new ArrayList<Iban>();
-        for(String ibanString : listOfIbans) {
-            Iban iban = new Iban(ibanString);
-            ibans.add(iban);
-        }
-
-        for(Iban iban: ibans){
-            String ibanValidity = iban.getIban() + ';';
-            if(isLengthValid(iban.getIban()) && isAlphanumeric(iban.getIban())){
-                convertIbanToNumeric(iban);
-                if(checkDigitValidation(iban.getNumericIban())){
-                    ibanValidity += "true\n";
-                }else{
-                    ibanValidity += "false\n";
-                }
-            }else{
-                ibanValidity += "false\n";
+            if (dataHandler.getMode() == 1) {
+                dataHandler.createOutputFile();
             }
-            if(dataHandler.getMode() == 0){
-                dataHandler.writeToConsole(ibanValidity);
-            } else{
-                dataHandler.writeToFile(ibanValidity);
+
+            ArrayList<Iban> ibans = new ArrayList<Iban>();
+            for (String ibanString : listOfIbans) {
+                Iban iban = new Iban(ibanString);
+                ibans.add(iban);
+            }
+
+            for (Iban iban : ibans) {
+                if (!isLengthValid(iban.getIban()) || !isAlphanumeric(iban.getIban())) {
+                    iban.setValid(false);
+                } else {
+                    convertIbanToNumeric(iban);
+                    if (checkDigitValidation(iban.getNumericIban())) {
+                        iban.setValid(true);
+                    } else {
+                        iban.setValid(false);
+                    }
                 }
-        }
+                if (dataHandler.getMode() == 0) {
+                    dataHandler.writeToConsole(String.valueOf(iban.isValid()));
+                } else {
+                    dataHandler.writeToFile(fileResultFormation(iban));
+                }
+            }
+            if (dataHandler.getMode() == 1) {
+                dataHandler.closeFile();
+            }
+        } while(dataHandler.getMode() == 0);
     }
+
 }

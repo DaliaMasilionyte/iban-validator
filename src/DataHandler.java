@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
+
 public class DataHandler {
 
     private static final String OUTPUT_FILE_EXTENSION = ".out";
@@ -9,7 +10,8 @@ public class DataHandler {
     private String outputFile;
     private BufferedReader userInputReader =
             new BufferedReader(new InputStreamReader(System.in));
-    private PrintWriter writer;
+//    private PrintWriter writer;
+    private Writer writer;
 
 
     public void selectMode() throws IOException {
@@ -59,7 +61,7 @@ public class DataHandler {
             }
     }
     return allIbans;
-}
+    }
 
     public void writeToConsole(String line){
         System.out.println(line);
@@ -70,14 +72,20 @@ public class DataHandler {
             inputFile = inputFile.substring(0, inputFile.lastIndexOf('.'));
         }
         this.outputFile = inputFile + OUTPUT_FILE_EXTENSION;
-        File file = new File(outputFile);
-        file.createNewFile();
-        this.writer = new PrintWriter(outputFile);
+//        Path file = Paths.get(outputFile);
+//        Files.write(file, Collections.singleton(""), Charset.forName("UTF-8"));
+//        this.writer = new PrintWriter(outputFile);
+        this.writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(outputFile), "utf-8"));
+
     }
 
-    public void writeToFile(String line){
-        writer.println(line);
+    public void writeToFile(String line) throws IOException {
+            writer.write(line + "\n");
 
+    }
+    public void closeFile() throws IOException {
+        writer.close();
     }
 
 }
