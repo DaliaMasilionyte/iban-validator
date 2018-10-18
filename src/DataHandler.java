@@ -10,7 +10,6 @@ public class DataHandler {
     private String outputFile;
     private BufferedReader userInputReader =
             new BufferedReader(new InputStreamReader(System.in));
-//    private PrintWriter writer;
     private Writer writer;
 
 
@@ -35,32 +34,32 @@ public class DataHandler {
     }
 
     public ArrayList<String> readInput() throws IOException {
-    ArrayList<String> allIbans = new ArrayList<String>();
-    String iban;
-    switch(this.mode) {
-        case 0:
-            System.out.println("Įveskite IBAN.");
-            iban = this.userInputReader.readLine();
-            iban = normalize(iban);
-            allIbans.add(iban);
-            break;
-        case 1:
-            System.out.println("Įveskite kelią iki failo.");
-            this.inputFile = this.userInputReader.readLine();
-            try {
-                BufferedReader fileReader =
-                        new BufferedReader(new FileReader(inputFile));
-                while((iban = fileReader.readLine()) != null){
-                    iban = normalize(iban);
-                    allIbans.add(iban);
-                }
+        ArrayList<String> allIbans = new ArrayList();
+        String iban;
+        switch(mode) {
+            case 0:
+                System.out.println("Įveskite IBAN.");
+                iban = this.userInputReader.readLine();
+                iban = normalize(iban);
+                allIbans.add(iban);
                 break;
+            case 1:
+                System.out.println("Įveskite kelią iki failo.");
+                this.inputFile = this.userInputReader.readLine();
+                try {
+                    BufferedReader fileReader =
+                            new BufferedReader(new FileReader(inputFile));
+                    while((iban = fileReader.readLine()) != null){
+                        iban = normalize(iban);
+                        allIbans.add(iban);
+                    }
+                    break;
 
-            } catch(java.io.IOException error) {
+                } catch(java.io.IOException error) {
                     System.err.println("Failas nerastas.");
-            }
-    }
-    return allIbans;
+                }
+        }
+        return allIbans;
     }
 
     public void writeToConsole(String line){
@@ -72,16 +71,13 @@ public class DataHandler {
             inputFile = inputFile.substring(0, inputFile.lastIndexOf('.'));
         }
         this.outputFile = inputFile + OUTPUT_FILE_EXTENSION;
-//        Path file = Paths.get(outputFile);
-//        Files.write(file, Collections.singleton(""), Charset.forName("UTF-8"));
-//        this.writer = new PrintWriter(outputFile);
         this.writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(outputFile), "utf-8"));
 
     }
 
     public void writeToFile(String line) throws IOException {
-            writer.write(line + "\n");
+        writer.write(line + "\n");
 
     }
     public void closeFile() throws IOException {

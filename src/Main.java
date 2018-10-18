@@ -9,16 +9,6 @@ public class Main {
 
         IbanValidator ibanValidator = new IbanValidator();
         ibanValidator.IbanValidationService();
-//        InputReader inputReader = new InputReader();
-//
-//        inputReader.selectMode();
-//        ArrayList<String> listOfIbans = inputReader.readInput();
-//
-//        for(String iban : listOfIbans) {
-//            System.out.println(iban);
-//        }
-//
-//
 
     }
 }
