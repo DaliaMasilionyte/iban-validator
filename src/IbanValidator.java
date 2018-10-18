@@ -28,21 +28,21 @@ public class IbanValidator {
         return !nonAlphanumeric;
     }
 
-    public BigDecimal convertStringToBigDecimal(String Iban){
-        BigDecimal numericIban;
-
-
-
-        return numericIban;
-    }
-
-
-    public boolean checkDigitValidation(BigDecimal numericIban){
-        boolean valid;
-
-
-
-        return valid;
-    }
+//    public BigDecimal convertStringToBigDecimal(String Iban){
+//        BigDecimal numericIban;
+//
+//
+//
+//        return numericIban;
+//    }
+//
+//
+//    public boolean checkDigitValidation(BigDecimal numericIban){
+//        boolean valid;
+//
+//
+//
+//        return valid;
+//    }
 
 }
