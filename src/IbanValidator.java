@@ -55,8 +55,10 @@ public class IbanValidator {
                     ibanObject.setValid(false);
                 } else {
 //                    kuriamas objektas arba fullvalidation arba piece wise
-                    Validation fullIbanValidation = new FullIbanValidation();
-                    fullIbanValidation.validate(ibanObject);
+//                    Validation fullIbanValidation = new FullIbanValidation();
+//                    fullIbanValidation.validate(ibanObject);
+                    Validation pieceWiseIbanValidation = new PieceWiseIbanValidation();
+                    pieceWiseIbanValidation.validate(ibanObject);
 
 
 //                    convertIbanToNumber(ibanObject);

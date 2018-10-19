@@ -1,9 +1,9 @@
 public abstract class Validation {
 
-    int CHECK_DIGIT_REMAINDER = 1;
-    int COUNTRY_CODE_LENGTH = 2;
-    int CHECK_DIGIT_LENGTH = 2;
-    int IBAN_PREFIX = COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH;
+    static final int CHECK_DIGIT_REMAINDER = 1;
+    private static final int COUNTRY_CODE_LENGTH = 2;
+    private static final int CHECK_DIGIT_LENGTH = 2;
+    private static final int IBAN_PREFIX = COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH;
 
 
     protected String convertIbanToNumber(ValidatedIban ibanObject) {
@@ -14,10 +14,15 @@ public abstract class Validation {
 
         for(char symbol: reorderedIban.toCharArray()){
 //                All letters are converted to their numeric representation
-            ibanNumber += Character.getNumericValue(symbol);
+            if(Character.isDigit(symbol)){
+                ibanNumber += symbol;
+            } else {
+                ibanNumber += Character.getNumericValue(symbol);
+            }
         }
         return ibanNumber;
     }
+
     protected abstract boolean validateCheckDigits(String ibanNumber);
 
     void validate(ValidatedIban ibanObject){
