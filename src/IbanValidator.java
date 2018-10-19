@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class IbanValidator {
 
-    private DataHandler dataHandler = new DataHandler();
+    private final DataHandler dataHandler = new DataHandler();
 
 
     public void startValidationService() throws IOException {
@@ -14,7 +14,7 @@ public class IbanValidator {
             if (dataHandler.getMode() == 1) {
                 dataHandler.createOutputFile();
             }
-            ArrayList<ValidatedIban> ibanObjectList = new ArrayList();
+            ArrayList<ValidatedIban> ibanObjectList = new ArrayList<>();
 
 //            Create ValidatedIban objects
             for (String ibanString : listOfIbans) {
