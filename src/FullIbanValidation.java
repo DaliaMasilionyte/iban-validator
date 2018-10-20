@@ -11,5 +11,4 @@ public class FullIbanValidation extends Validation {
         return (numericIban.mod(CHECK_DIGIT_MOD)).intValue() ==
                 CHECK_DIGIT_REMAINDER;
     }
-
 }

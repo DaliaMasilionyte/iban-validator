@@ -31,5 +31,4 @@ public class ValidatedIban {
                 iban.length() <= IBAN_NUMBER_MAX_LENGTH;
     }
 
-
 }

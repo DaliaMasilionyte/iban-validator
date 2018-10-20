@@ -4,7 +4,12 @@ import java.util.ArrayList;
 public class IbanValidator {
 
     private final DataHandler dataHandler = new DataHandler();
+    private static Validation validation;
 
+
+    public IbanValidator(Validation validation){
+        this.validation = validation;
+    }
 
     public void startValidationService() throws IOException {
         dataHandler.selectMode();
@@ -27,11 +32,7 @@ public class IbanValidator {
                     ibanObject.setValid(false);
                 } else {
 
-//                    Create PieceWiseIbanValidation object or
-//                    FullIbanValidation object
-                    Validation pieceWiseIbanValidation = new PieceWiseIbanValidation();
-                    pieceWiseIbanValidation.validate(ibanObject);
-
+                    validation.validate(ibanObject);
                 }
                 if (dataHandler.getMode() == 0) {
                     dataHandler.print(

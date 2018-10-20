@@ -4,7 +4,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        IbanValidator ibanValidator = new IbanValidator();
+//        Select the method of validation
+        Validation validation = new PieceWiseIbanValidation();
+//        Validation validation = new FullIbanValidation();
+
+        IbanValidator ibanValidator = new IbanValidator(validation);
         ibanValidator.startValidationService();
 
     }
