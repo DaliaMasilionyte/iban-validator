@@ -1,14 +1,14 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class IbanValidator {
+class IbanValidator {
 
-    private final DataHandler dataHandler = new DataHandler();
-    private static Validation validation;
+    private static final DataHandler dataHandler = new DataHandler();
+    private static CheckDigitValidation checkDigitValidation;
 
 
-    public IbanValidator(Validation validation){
-        this.validation = validation;
+    public IbanValidator(CheckDigitValidation checkDigitValidation){
+        IbanValidator.checkDigitValidation = checkDigitValidation;
     }
 
     public void startValidationService() throws IOException {
@@ -32,7 +32,7 @@ public class IbanValidator {
                     ibanObject.setValid(false);
                 } else {
 
-                    validation.validate(ibanObject);
+                    checkDigitValidation.validate(ibanObject);
                 }
                 if (dataHandler.getMode() == 0) {
                     dataHandler.print(

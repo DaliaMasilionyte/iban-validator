@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 
 
-public class FullIbanValidation extends Validation {
+public class FullCheckDigitValidation extends CheckDigitValidation {
 
     private static final BigInteger CHECK_DIGIT_MOD = new BigInteger("97");
 

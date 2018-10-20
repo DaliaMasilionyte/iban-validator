@@ -3,7 +3,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 
-public class DataHandler {
+class DataHandler {
 
     private static final String OUTPUT_FILE_EXTENSION = ".out";
     private Integer mode;

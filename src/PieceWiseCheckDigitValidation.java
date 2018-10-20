@@ -1,4 +1,4 @@
-public class PieceWiseIbanValidation extends Validation {
+public class PieceWiseCheckDigitValidation extends CheckDigitValidation {
 
     private static final long CHECK_DIGIT_MOD = 97;
     private static final int MAX_PIECE_LENGTH = 9;

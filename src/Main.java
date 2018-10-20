@@ -1,14 +1,14 @@
 import java.io.IOException;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) throws IOException {
 
-//        Select the method of validation
-        Validation validation = new PieceWiseIbanValidation();
-//        Validation validation = new FullIbanValidation();
+//        Select the method of checkDigitValidation
+        CheckDigitValidation checkDigitValidation = new PieceWiseCheckDigitValidation();
+//        CheckDigitValidation checkDigitValidation = new FullCheckDigitValidation();
 
-        IbanValidator ibanValidator = new IbanValidator(validation);
+        IbanValidator ibanValidator = new IbanValidator(checkDigitValidation);
         ibanValidator.startValidationService();
 
     }

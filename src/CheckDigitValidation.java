@@ -1,12 +1,13 @@
-public abstract class Validation {
+abstract class CheckDigitValidation {
 
     static final int CHECK_DIGIT_REMAINDER = 1;
     private static final int COUNTRY_CODE_LENGTH = 2;
     private static final int CHECK_DIGIT_LENGTH = 2;
-    private static final int IBAN_PREFIX = COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH;
+    private static final int IBAN_PREFIX =
+            COUNTRY_CODE_LENGTH + CHECK_DIGIT_LENGTH;
 
 
-    protected String convertIbanToNumber(String iban) {
+    String convertIbanToNumber(String iban) {
         String reorderedIban = iban.substring(IBAN_PREFIX) +
                 iban.substring(0, IBAN_PREFIX);
         StringBuilder ibanNumber = new StringBuilder();

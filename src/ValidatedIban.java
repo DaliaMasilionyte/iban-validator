@@ -1,6 +1,6 @@
 import java.util.regex.Pattern;
 
-public class ValidatedIban {
+class ValidatedIban {
 
     private static final int IBAN_NUMBER_MIN_LENGTH = 15;
     private static final int IBAN_NUMBER_MAX_LENGTH = 34;
@@ -24,7 +24,7 @@ public class ValidatedIban {
         return valid;
     }
 
-    protected boolean checkFormat() {
+    boolean checkFormat() {
         Pattern p = Pattern.compile("[^a-zA-Z0-9]");
         return !p.matcher(iban).find() &&
                 iban.length() >= IBAN_NUMBER_MIN_LENGTH &&
