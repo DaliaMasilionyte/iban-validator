@@ -27,11 +27,7 @@ abstract class CheckDigitValidation {
 
     void validate(ValidatedIban ibanObject){
         String ibanNumber = convertIbanToNumber(ibanObject.getIban());
-        if (validateCheckDigits(ibanNumber)) {
-            ibanObject.setValid(true);
-        } else {
-            ibanObject.setValid(false);
-        }
+        ibanObject.setValid(validateCheckDigits(ibanNumber));
     }
 
 
