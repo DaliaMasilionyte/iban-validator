@@ -5,7 +5,7 @@ import java.util.ArrayList;
 class IbanValidator {
 
     private static final DataHandler dataHandler = new DataHandler();
-    private final CheckDigitValidation checkDigitValidation;
+    private final Validation checkDigitValidation;
 
 
     /**
@@ -25,6 +25,7 @@ class IbanValidator {
 
     /**
      * Works as a service of IBAN validation.
+     * Loops if the mode is interactive.
      *
      * @throws IOException If an input or output
      *                     exception occurred
@@ -51,7 +52,7 @@ class IbanValidator {
 
                 } else {
 //                    Country code validation
-                    CountryCodeValidation countryCodeValidation = new CountryCodeValidation();
+                    Validation countryCodeValidation = new CountryCodeValidation();
                     if(!countryCodeValidation.isValid(ibanObject)){
                         ibanObject.setValid(false);
 
@@ -70,7 +71,6 @@ class IbanValidator {
                         dataHandler.closeFile();
                         break;
                 }
-
             }
 //            If interactive mode is selected, service has to be looped
         } while(dataHandler.getMode() == 0);

@@ -2,7 +2,10 @@ import java.util.Locale;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class CountryCodeValidation {
+/**
+ * Checks if the IBAN contains a valid ISO country code.
+ */
+class CountryCodeValidation implements Validation {
 
     private final SortedSet<String> isoCountries;
 
@@ -13,8 +16,8 @@ public class CountryCodeValidation {
         }
     }
 
-    boolean isValid(Iban iban){
-        return isoCountries.contains(iban.getCountryCode());
+    public boolean isValid(ValidatedIban validatedIban){
+        return isoCountries.contains(validatedIban.getCountryCode());
     }
 
 }

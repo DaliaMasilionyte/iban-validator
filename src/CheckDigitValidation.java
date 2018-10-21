@@ -6,7 +6,7 @@
  *
  */
 
-abstract class CheckDigitValidation {
+abstract class CheckDigitValidation implements Validation{
 
     static final int CHECK_DIGIT_REMAINDER = 1;
     private static final int COUNTRY_CODE_LENGTH = 2;
@@ -58,7 +58,9 @@ abstract class CheckDigitValidation {
      *
      * @param ibanObject ValidatedIban class object
      */
-    boolean isValid(ValidatedIban ibanObject){
+
+    @Override
+    public boolean isValid(ValidatedIban ibanObject){
         String ibanNumber = convertIbanToNumber(ibanObject.getIban());
         return validateCheckDigits(ibanNumber);
     }

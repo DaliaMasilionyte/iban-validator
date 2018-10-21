@@ -1,7 +1,7 @@
 # IBAN validator
 
 ### 1. Introduction
-A program that validates the given IBAN by checking its length, symbol validity and check digits.
+A program that validates the given IBAN by checking its length, symbol validity, ISO country validity and check digits.
 It was created using information provided at [Wikipedia](https://en.wikipedia.org/wiki/International_Bank_Account_Number).
 
 The program works in two modes - interactive and validating from file.

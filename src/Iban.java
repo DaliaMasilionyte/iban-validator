@@ -1,4 +1,4 @@
-public class Iban {
+class Iban {
 
     private static final int COUNTRY_CODE_LENGTH = 2;
     private static final int CHECK_DIGIT_LENGTH = 2;

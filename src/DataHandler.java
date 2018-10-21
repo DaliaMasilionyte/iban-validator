@@ -3,7 +3,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
- * Class responsible for handling the input and output.
+ * Handles the input and output.
  */
 class DataHandler {
 
