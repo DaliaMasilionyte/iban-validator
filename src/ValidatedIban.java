@@ -1,6 +1,6 @@
 import java.util.regex.Pattern;
 
-class ValidatedIban {
+class ValidatedIban extends Iban {
 
     private static final int IBAN_NUMBER_MIN_LENGTH = 15;
     private static final int IBAN_NUMBER_MAX_LENGTH = 34;
@@ -9,6 +9,7 @@ class ValidatedIban {
 
 
     public ValidatedIban(String iban) {
+        super(iban);
         this.iban = iban;
     }
 
@@ -23,6 +24,7 @@ class ValidatedIban {
     public boolean isValid(){
         return valid;
     }
+
 
     /**
      * Validates the format of IBAN.

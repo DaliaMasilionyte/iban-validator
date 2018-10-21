@@ -58,9 +58,9 @@ abstract class CheckDigitValidation {
      *
      * @param ibanObject ValidatedIban class object
      */
-    void validate(ValidatedIban ibanObject){
+    boolean isValid(ValidatedIban ibanObject){
         String ibanNumber = convertIbanToNumber(ibanObject.getIban());
-        ibanObject.setValid(validateCheckDigits(ibanNumber));
+        return validateCheckDigits(ibanNumber);
     }
 
 
