@@ -29,7 +29,10 @@ Result will be a boolean answer:
 
 ## Mode "1"
 You will be promptly asked to type in a path to the desired file. 
-**Input** need to be structured in a following manner (One IBAN per line):
+
+**Input** must to be structured in a following manner 
+
+(One IBAN per line):
 ```
 LT556754077788877777
 AL35202111090000000001234567
