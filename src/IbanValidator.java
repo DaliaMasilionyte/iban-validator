@@ -68,9 +68,11 @@ class IbanValidator {
                     case 1:
                         dataHandler.print(ibanObject.getIban() + ";" +
                             String.valueOf(ibanObject.isValid()));
-                        dataHandler.closeFile();
                         break;
                 }
+            }
+            if(dataHandler.getMode() == 1){
+                dataHandler.closeFile();
             }
 //            If interactive mode is selected, service has to be looped
         } while(dataHandler.getMode() == 0);
