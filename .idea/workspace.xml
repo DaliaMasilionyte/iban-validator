@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a99b1f63-4777-4985-ba54-3260ea35f3ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ibantest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ibantest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="a99b1f63-4777-4985-ba54-3260ea35f3ac" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +29,7 @@
           <entry key="file" value="1" />
           <entry key="iml" value="1" />
           <entry key="java" value="23" />
-          <entry key="out" value="7" />
+          <entry key="out" value="8" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -41,7 +38,7 @@
           <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="23" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -63,18 +60,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/IbanValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ValidatedIban.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -95,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CheckDigitValidation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -122,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/ibantest.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -133,6 +118,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iban-validator.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/ibantest.out">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -210,9 +200,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-89" />
-    <option name="y" value="-1038" />
+    <option name="y" value="-1057" />
     <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
@@ -429,7 +419,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-89" y="-1038" width="1920" height="1057" extended-state="0" />
+    <frame x="-89" y="-1057" width="1920" height="984" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19542067" />
@@ -439,14 +429,14 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49840257" weight="0.32746115" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49041533" visible="true" weight="0.280829" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49041533" visible="true" weight="0.30381167" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4969475" weight="0.3993135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4993895" weight="0.32914287" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993895" weight="0.32914287" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4993895" weight="0.32914287" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50958467" side_tool="true" visible="true" weight="0.280829" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50958467" side_tool="true" visible="true" weight="0.30381167" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.498779" weight="0.328" />
       <window_info anchor="bottom" id="Inspection Results" order="11" sideWeight="0.497558" weight="0.32837528" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -526,9 +516,6 @@
     <entry file="file://$PROJECT_DIR$/resources/file" />
     <entry file="file://$PROJECT_DIR$/resources/failas.out" />
     <entry file="file://$PROJECT_DIR$/resources/emptyFile.txt" />
-    <entry file="file://$PROJECT_DIR$/resources/ibantest.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -560,13 +547,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CheckDigitValidation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -608,6 +588,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/ibantest.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CheckDigitValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="2" />
         </state>
       </provider>
     </entry>

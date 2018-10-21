@@ -13,13 +13,18 @@ Using command line as you are in the root folder type:
 ./run.sh
 ```
 You will be asked to select a mode.
+
 **0** - interactive.
 
 **1** - reading from a file.
 
 ## Mode "0"
-You will be promptly asked to type an IBAN. Result will be a boolean answer: 
+You will be promptly asked to type an IBAN. 
+
+Result will be a boolean answer: 
+
 **true** if IBAN is valid;
+
 **false** if IBAN is invalid.
 
 ## Mode "1"
