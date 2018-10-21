@@ -24,6 +24,15 @@ class ValidatedIban {
         return valid;
     }
 
+    /**
+     * Validates the format of IBAN.
+     * Checks the length constraints and whether is alphanumeric only.
+     * No further validations are required if false.
+     * Used in:
+     * @see IbanValidator#startValidationService()
+     *
+     * @return format of IBAN validity
+     */
     boolean checkFormat() {
         Pattern p = Pattern.compile("[^a-zA-Z0-9]");
         return !p.matcher(iban).find() &&

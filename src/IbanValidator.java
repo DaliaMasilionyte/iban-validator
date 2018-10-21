@@ -1,16 +1,34 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 class IbanValidator {
 
     private static final DataHandler dataHandler = new DataHandler();
-    private static CheckDigitValidation checkDigitValidation;
+    private final CheckDigitValidation checkDigitValidation;
 
 
+    /**
+     * Class constructor with predefined method of check digit validation method.
+     */
+    public IbanValidator(){
+        this.checkDigitValidation = new PieceWiseCheckDigitValidation();
+    }
+    /**
+     * Class constructor specifying a check digit validation method.
+     *
+     * @param checkDigitValidation chosen method of validating the check digits
+     */
     public IbanValidator(CheckDigitValidation checkDigitValidation){
-        IbanValidator.checkDigitValidation = checkDigitValidation;
+        this.checkDigitValidation = checkDigitValidation;
     }
 
+    /**
+     * Works as a service of IBAN validation.
+     *
+     * @throws IOException If an input or output
+     *                     exception occurred
+     */
     public void startValidationService() throws IOException {
         dataHandler.selectMode();
         do {

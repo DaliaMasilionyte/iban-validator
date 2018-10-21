@@ -2,7 +2,9 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-
+/**
+ * Class responsible for handling the input and output.
+ */
 class DataHandler {
 
     private static final String OUTPUT_FILE_EXTENSION = ".out";
@@ -12,8 +14,15 @@ class DataHandler {
             new BufferedReader(new InputStreamReader(System.in));
     private Writer writer;
 
-
-    public void selectMode() throws IOException {
+    /**
+     * Defines the mode of the program for reading input and writing output.
+     * @see DataHandler#readInput()
+     * @see DataHandler#print(String)
+     *
+     * @throws IOException If an input or output
+     *                     exception occurred
+     */
+    void selectMode() throws IOException {
         while(mode == null){
             System.out.println("Pasirinkite programos veikimo rėžimą: " +
                     "0 - interaktyvus veikimas; 1 - skaitymas iš failo.");
@@ -24,11 +33,20 @@ class DataHandler {
         }
     }
 
-    public int getMode() {
+    int getMode() {
         return mode;
     }
 
-    public ArrayList<String> readInput() throws IOException {
+    /**
+     * Reads the input and retrieves IBANs from it.
+     * Works in two modes which were selected.
+     * @see DataHandler#selectMode()
+     *
+     * @return IBANS from input
+     * @throws IOException If an input or output
+     *                     exception occurred
+     */
+    ArrayList<String> readInput() throws IOException {
         ArrayList<String> allIbans = new ArrayList<>();
         String iban;
         switch(mode) {
@@ -64,7 +82,12 @@ class DataHandler {
         return allIbans;
     }
 
-    public void createOutputFile() throws IOException {
+    /**
+     * Creates output file with defined extension.
+     *
+     * @throws IOException If output exception occurred
+     */
+    void createOutputFile() throws IOException {
         if (inputFileName.contains(".")) {
             inputFileName = inputFileName.substring(0,
                     inputFileName.lastIndexOf('.'));
@@ -74,7 +97,13 @@ class DataHandler {
                 new FileOutputStream(outputFile), StandardCharsets.UTF_8));
     }
 
-    public void print(String line){
+    /**
+     * Prints either to standard output or file defined by the mode of program.
+     * @see DataHandler#selectMode()
+     *
+     * @param line output to be printed
+     */
+    void print(String line){
         switch(mode) {
             case 0:
                 System.out.println(line);
@@ -89,7 +118,12 @@ class DataHandler {
         }
     }
 
-    public void closeFile() throws IOException {
+    /**
+     * Closes the output stream.
+     *
+     * @throws IOException If output exception occurred
+     */
+    void closeFile() throws IOException {
         writer.close();
     }
 

@@ -6,6 +6,12 @@ class ValidatedIbanTest {
     private ValidatedIban validatedIban;
 
     @Test
+    void checkFormat() {
+        validatedIban = new ValidatedIban("LT647044001231465456");
+        assertTrue(validatedIban.checkFormat());
+    }
+
+    @Test
     void checkFormatShortLength() {
         validatedIban = new ValidatedIban("A12345");
         assertFalse(validatedIban.checkFormat());
